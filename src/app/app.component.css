@@ -1,0 +1,86 @@
+/* ตั้งค่าเมนูหลัก */
+nav {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    opacity: 80%;
+    padding: 10px;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ตั้งค่า Hover Effect */
+nav ul li a:hover {
+    background-color: #555;
+    color: #ffcc00;
+    border-radius: 5px;
+}
+
+/* ทำให้เมนูจัดวางในแนวนอนและตั้งค่าเว้นระยะ */
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* จัดการคอนเทนเนอร์หลัก */
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+/* รูปภาพโลโก้ */
+.logo-image {
+    object-fit: contain;
+    width: 150px; /* ขนาดของโลโก้ */
+    height: auto;
+    border-radius: 50%;
+    margin-right: 15px; /* เว้นระยะระหว่างโลโก้และหัวข้อ */
+}
+
+/* หัวข้อ */
+.logo-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+@media (max-width: 768px){
+    nav ul{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px;
+    }
+    li{
+        padding: 8px;
+    }
+    .logo-container{
+        flex-direction: column;
+
+    }
+    .logo-container h1{
+        margin-right: 25%;
+        font-size:larger;
+    }
+    .logo-image{
+        padding-bottom: 10px;
+    }
+}

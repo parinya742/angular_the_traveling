@@ -1,0 +1,18 @@
+<h2>All-Country Recommendations for Travelers (A-Z)</h2>
+<!-- ช่องค้นหา -->
+<input type="text" [(ngModel)]="searchText" placeholder="Search for Country" />
+<!-- ตารางแสดงผลการค้นหา -->
+<table class="country-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Region</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of filteredCountries">
+        <td>{{ country.name }}</td>
+        <td>{{ country.region }}</td>
+      </tr>
+    </tbody>
+  </table>

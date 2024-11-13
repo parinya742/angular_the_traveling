@@ -1,0 +1,115 @@
+/* ตั้งค่า Flexbox ให้กับคอนเทนเนอร์ */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* ให้กล่องข้อมูลล้นแถวแล้วไปขึ้นแถวใหม่ */
+    gap: 20px; /* ระยะห่างระหว่างกล่อง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+    padding: 20px;
+}
+
+/* ตั้งค่าแต่ละกล่องข้อมูล */
+.card {
+    text-align: center;
+    width: calc(33.333% - 20px); /* ตั้งค่าให้แถวละ 3 กล่อง (ลบระยะห่างระหว่างกล่อง) */
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ตั้งค่าภาพ */
+.card img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* ตั้งค่าหัวข้อ */
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ตั้งค่าข้อความ */
+.card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ตั้งค่าปุ่ม */
+.card p a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card p a:hover {
+    background-color: #0056b3;
+}
+
+/* ตั้งค่าคอนเทนเนอร์หลัก */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* จัดรูปแบบเนื้อหา */
+.featurette-heading {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.text-muted {
+    color: #888;
+}
+
+.lead {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* รูปภาพ */
+.featurette-image {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* จัดเรียงในแนวตั้งเมื่อหน้าจอมีขนาดเล็ก */
+@media (max-width: 768px) {
+    div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featurette-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .card img{
+        width: auto;
+    }
+    .card{
+        flex-direction: column;
+        text-align: center;
+        width: auto;
+        margin-left: 13%;
+    }
+}
