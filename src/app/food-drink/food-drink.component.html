@@ -1,1 +1,33 @@
-<p>food-drink works!</p>
+<h1>Restaurants in each country <span style="font-style: italic; color: darkgrey; ">recommend</span></h1>
+<div class="container">
+    <div *ngFor="let fooddrinks of fooddrink; let i = index" class="recommendation">
+        <h1 style="color:brown">{{ fooddrinks.food }}</h1>
+        <h2>At: <span style="color:darkcyan">{{ fooddrinks.Country }}</span></h2>
+        <p>รายละเอียด: {{ fooddrinks.Description }}</p>
+        <p style="color: darkblue; font-weight: bold;">{{ fooddrinks.Contact }}</p>
+        <button class="edit-con" (click)="editRecommendation(i)">Edit</button>
+        <button class="edit-con delte" (click)="deleteRecommendation(i)">Delete</button>
+
+    </div>
+</div>
+
+
+
+<div class="add-recommendation-form">
+    <h3>Add a New Recommendation Food and Drink</h3>
+    <div class="formcon">
+        <input type="text" [(ngModel)]="newFood" placeholder="Name Food" required />
+        <input type="text" [(ngModel)]="newCountry" placeholder="Name Country" required />
+        <textarea [(ngModel)]="newDescription" placeholder="Description" required></textarea>
+        <textarea [(ngModel)]="newContact" placeholder="Contact" required></textarea>
+
+        <div class="button-con">
+            <button *ngIf="editingIndex === null" (click)="addRecommendation()">Add Recommendation</button>
+            <button *ngIf="editingIndex !== null" (click)="saveRecommendation()">Save Changes</button>
+            <button *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
+        </div>
+
+
+    </div>
+
+</div>

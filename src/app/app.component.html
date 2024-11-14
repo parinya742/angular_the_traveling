@@ -1,18 +1,16 @@
-
-
 <div class="logo-container">
-  <img src="https://cdn.pixabay.com/photo/2019/07/08/19/17/hot-air-balloon-4325398_960_720.jpg" alt="Schönbrunn Palace in Vienna, Austria"
-       class="logo-image">
+  <img src="https://cdn.pixabay.com/photo/2019/07/08/19/17/hot-air-balloon-4325398_960_720.jpg"
+    alt="Schönbrunn Palace in Vienna, Austria" class="logo-image">
   <h1 style="margin-left: 25%">{{title}}</h1>
 </div>
 
 <nav>
   <ul style="display: flex;">
-      <li><a [routerLink]="['/']">Home</a></li>
-      <li><a [routerLink]="['/about']">About</a></li>
-      <li><a [routerLink]="['/recomend']">Recomendations For Travels Country</a></li>
-      <li><a [routerLink]="['/all-country']">All Country</a></li>
-      <li><a [routerLink]="['/food-drink']">Food & Drink</a></li>
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li><a [routerLink]="['/about']">About</a></li>
+    <li><a [routerLink]="['/recomend']">Recomendations For Travels Country</a></li>
+    <li><a [routerLink]="['/all-country']">All Country</a></li>
+    <li><a [routerLink]="['/food-drink']">Food & Drink</a></li>
 
   </ul>
 </nav>
@@ -22,5 +20,25 @@
 <router-outlet></router-outlet>
 
 <footer style="background-color:#555; padding: 5px; text-align: center; color:#fff">
+  <div class="grid-content">
+    <div class="col-text">
+      <h3>Tutorial</h3>
+      <p>Tutorial</p>
+      <p>Tutorial</p>
+      <p>Tutorial</p>
+      <p>Tutorial</p>
+    </div>
+    <div class="col-text">
+      <h3>About</h3>
+      <p>About</p>
+      <p>About</p>
+      <p>About</p>
+      <p>About</p>
+    </div>
+    <div class="col-text">
+      <h3>About</h3>
+    </div>
+  </div>
   <p>- World Travels - For Experience Your Self - </p>
+
 </footer>

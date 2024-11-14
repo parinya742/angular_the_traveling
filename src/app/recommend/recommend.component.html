@@ -1,22 +1,27 @@
 <h2>Recommendation For Travel Country</h2>
-<p>Exploring new countries can be a life-changing experience, offering a blend of cultural, culinary, and historical experiences. Here are a few recommendations for popular travel destinations:</p>
+<p>Exploring new countries can be a life-changing experience, offering a blend of cultural, culinary, and historical
+    experiences. Here are a few recommendations for popular travel destinations:</p>
 
-<div class="recommendation">
-    <h3>France</h3>
-    <p>France offers breathtaking landscapes, historic architecture, and world-renowned cuisine. From the Eiffel Tower in Paris to the lavender fields in Provence, it's a country filled with charm.</p>
+
+<div *ngFor="let recommendation of recommendations let i=index " class=" recommendation">
+    <h3>{{ recommendation.name }}</h3>
+    <p>{{ recommendation.description }}</p>
+    <button (click)="editRecommendation(i)">Edit</button>
+
 </div>
 
-<div class="recommendation">
-    <h3>Italy</h3>
-    <p>Known for its art, history, and incredible food, Italy is a must-visit destination. Explore ancient ruins in Rome, canals in Venice, and the beautiful countryside of Tuscany.</p>
-</div>
+<div class="add-recommendation-form">
+    <h3>Add a New Recommendation</h3>
+    <div class="formcon">
+        <input type="text" [(ngModel)]="newName" placeholder="Country Name" required />
+        <textarea [(ngModel)]="newDescription" placeholder="Description" required></textarea>
 
-<div class="recommendation">
-    <h3>Japan</h3>
-    <p>Japan is a land of contrasts, blending traditional temples and modern skyscrapers. Visit Tokyo for its futuristic vibe, Kyoto for its temples, and Hokkaido for stunning natural scenery.</p>
-</div>
+        <div class="button-con">
+            <button (click)="addRecommendation()">Add Recommendation</button>
+            <button *ngIf="editingIndex !== null" (click)="saveRecommendation()">Save Changes</button>
+            <button *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
+        </div>
 
-<div class="recommendation">
-    <h3>New Zealand</h3>
-    <p>New Zealand is famous for its natural beauty, including majestic mountains, pristine beaches, and friendly locals. It's a paradise for adventure lovers and nature enthusiasts.</p>
+    </div>
+
 </div>
